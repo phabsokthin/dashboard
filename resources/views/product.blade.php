@@ -19,19 +19,19 @@
             @endif
 
             <h3>Product</h3>
-            <form method="POST" enctype="multipart/form-data" action="{{ route("save_product") }}">
+            <form id="frm" method="POST" enctype="multipart/form-data" action="{{ route('save_product') }}">
                 @csrf
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="">ProductName</label>
-                            <input type="text" required name="pname" class="form-control">
+                            <input type="text" name="pname" id="pname" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="">CompanyName</label>
-                            <select name="companyname" class="form-control" id="">
+                            <select name="companyname" class="form-control" id="companyname">
                                 @foreach ($company as $item)
                                     <option value="{{ $item->id }}">{{ $item->companyname }}</option>
                                 @endforeach
@@ -41,7 +41,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="">Category</label>
-                            <select name="categoryname" class="form-control" id="">
+                            <select name="categoryname" class="form-control" id="categoryname">
                                 @foreach ($category as $cate)
                                     <option value="{{ $cate->id }}">{{ $cate->categoryname }}</option>
                                 @endforeach
@@ -51,22 +51,25 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="">Qty</label>
-                            <input type="text" name="qty" required class="form-control">
+                            <input type="text" name="qty" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="">Price</label>
-                            <input type="text" name="price" required class="form-control">
+                            <input type="text" name="price" class="form-control">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">
-                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="submit" id="save" class="btn btn-success"> <span style="display: none"
+                                class="spinner-border spinner-border-sm d" role="status" aria-hidden="true"></span>
+                        Save</button>
                     </div>
                 </div>
             </form>
+
             <hr>
             <div class="row">
                 <table class="table table-bordered">
@@ -96,9 +99,17 @@
             </div>
 
         </div>
-
-
-
         <!-- /.content -->
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#save").click(function(){
+                $('.d').show();
+            })
+
+        })
+    </script>
 @endsection

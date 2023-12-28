@@ -76,7 +76,8 @@
                                 <td>
                                     <button class="btn btn-primary btn-sm" data-toggle="modal"
                                         data-target="#edit{{ $item->id }}">Edit</button>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete{{ $item->id }}" >Delete</button>
+                                    <button class="btn btn-danger btn-sm" data-toggle="modal"
+                                        data-target="#delete{{ $item->id }}">Delete</button>
                                 </td>
                             </tr>
 
@@ -93,12 +94,14 @@
                                         </div>
 
                                         <div class="modal-body">
-                                            <h3>Are you sure delete <span class="text-danger" >{{ $item->companyname }}</span> </h3>
+                                            <h3>Are you sure delete <span
+                                                    class="text-danger">{{ $item->companyname }}</span> </h3>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-dismiss="modal">Close</button>
-                                            <a href="{{ route('DeleteCompany', $item->id) }}" class="btn btn-danger" >Yes</a>
+                                            <a href="{{ route('DeleteCompany', $item->id) }}"
+                                                class="btn btn-danger">Yes</a>
                                         </div>
                                     </div>
                                 </div>
@@ -121,8 +124,8 @@
                                                 @csrf
                                                 <div class="form-group">
                                                     <label for="">CompanyName</label>
-                                                    <input value="{{ $item->companyname }}" type="text" name="company"
-                                                        required class="form-control">
+                                                    <input value="{{ $item->companyname }}" type="text"
+                                                        name="company" required class="form-control">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Address</label>
@@ -138,7 +141,9 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Update</button>
+                                                <button type="submit" id="submits" class="btn btn-primary"><span
+                                                        style="display: none" class="spinner-border spinner-border-sm d"
+                                                        role="status" aria-hidden="true"></span>Update</button>
                                             </div>
                                         </form>
                                     </div>
@@ -150,4 +155,5 @@
             </div>
         </div>
     </div>
+    <script></script>
 @endsection

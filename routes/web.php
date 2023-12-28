@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TestControll;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,9 @@ Route::get("/company_delete/{id}", [CompanyController::class, 'DeleteCompany'])-
 //category
 Route::get('/cateogry', [CategoryController::class, 'Category'])->name("Category_name");
 Route::post('/post_category', [CategoryController::class, 'insert_category'])->name("insert_category");
+//student
 
-
-//product
+Route::get('/get_test', [TestControll::class, "index_test"])->name("test");
+Route::post("/post_test", [TestControll::class, "save_student"])->name("save_student");
+Route::get('/delete/{id}', [TestControll::class, "delete_item"])->name("delete_item");
+Route::post('/update/{id}', [TestControll::class, "update_item"])->name("update_item");

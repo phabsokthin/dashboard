@@ -155,6 +155,15 @@
             </a>
           </li>
 
+          <li class="nav-item ">
+            <a href="{{ route('test') }}" class="nav-link {{ Route::is('test') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Test
+              </p>
+            </a>
+          </li>
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
@@ -191,6 +200,8 @@
   @yield('content')
 
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>

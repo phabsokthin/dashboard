@@ -27,7 +27,7 @@ class ProductController extends Controller
     }
 
     public function save_product(Request $request){
-
+        sleep(2);
         $product= new Product();
         $product->productname = $request->pname;
         $product->company_id = $request->companyname;
